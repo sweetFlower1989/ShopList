@@ -8,6 +8,7 @@ public class CookBook {
 	private HashMap<String,Recipe> cb; 
 	private ArrayList<String> names;
 	
+	//Constructors
 	public CookBook(){
 		cb = new HashMap<String,Recipe>();
 		names = new ArrayList<String>();
@@ -18,7 +19,7 @@ public class CookBook {
 		names = n;
 	}
 	
-	
+	//Getters and setters
 	public void setCookBook(HashMap<String,Recipe> ncb){
 		cb = ncb;
 	}
@@ -61,7 +62,7 @@ public class CookBook {
  		names.remove(val);
  		System.out.println(dish+ " er blevet slettet.");
  	}
- 	
+ 	//Add ingredients to a dish/recipe
  	public void addIngreToDish(String dishName, String ingre){
  		ArrayList<String> ingreList = cb.get(dishName).ingre;
  		String[] iList = ingre.split(",");

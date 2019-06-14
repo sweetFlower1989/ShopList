@@ -5,7 +5,11 @@ private Outside[] outList;
 private String[] mealList;
  private char[] list;
 
- 
+ 	//The meal plan has 3 arrrays 
+ 	//First is the list for if you are eaten outside your home
+ 	//Second is the meals in the mealplan
+ 	//Last is the mealplan which indicates what has been chosen either a
+ 	//or a place outside.
  	public MealPlan(){
  		outList = new Outside[7];
  		mealList = new String[7];
@@ -25,7 +29,7 @@ private String[] mealList;
  			list[i]='0';
  		}
  	}
-
+ 	//Getters and setters
 	public Outside[] getOutside(){
 		return outList;
 	}
@@ -64,6 +68,7 @@ private String[] mealList;
 		list[val]=c;
 	}
 	
+	//Clear a day in plan
 	public void clearDay(int day, Boolean meal){
 		list[day-1] = '0';
 		if(meal==true){
@@ -72,11 +77,11 @@ private String[] mealList;
 			outList[day-1]=null;
 		}
 	}
-	
+	//Clear all lists
 	public void clearLists(){
 		initLists();
 	}
-
+	//Show mealplan
 	public void showPlan(){
 		for(int i=0;i<list.length;i++){
 			String day = weekday(i);

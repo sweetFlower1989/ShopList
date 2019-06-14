@@ -14,6 +14,8 @@ import Structures.MealPlan;
 import Structures.PeoplePlaces;
 
 public class IO {
+	
+	//Read in and see if the app has been used before
 	public ArrayList<Boolean> readAvailable(){
 		//creating File instance to reference text file in Java
         ArrayList<Boolean> list = new ArrayList<Boolean>();
@@ -39,7 +41,7 @@ public class IO {
 		
 		
 	}
-	
+	//Read in cookbook 
 	public void readCookBook(CookBook cb){
 		boolean name = false; 
 		boolean ingre = false;
@@ -84,7 +86,7 @@ public class IO {
 		}
 		
 	}
-	
+	//Read in the friends and restaurant
 	public void readPeoplePlaces(PeoplePlaces pp){
  		File text = new File("pp.eat");
  		
@@ -100,7 +102,7 @@ public class IO {
 		System.out.println("pp.eat kunne ikke indlæses");
 		}
 	}
-	
+	//Read in meal plan
 	public void readMealPlan(MealPlan mp){
 		File text = new File("mp.eat");
  		int l = 0;
@@ -113,7 +115,7 @@ public class IO {
 		System.out.println("mp.eat kunne ikke indlæses");
 		}
 	}
-	
+	//Read in always list
 	public void readAlwaysList(AlwaysList al){
 		File text = new File("al.eat");
  		
@@ -124,7 +126,9 @@ public class IO {
 		System.out.println("al.eat kunne ikke indlæses");
 		}	
 	}
-	
+	/* 
+	 * Save the files - hasn't been implemented
+	 */
 	public void saveCookBook(CookBook cb){
 		
 	}

@@ -2,12 +2,15 @@ package Structures;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+/*
+ * The shopping list consists of the alwayslist and the ingredient
+ * for the meals in the week
+ */
 public class ShoppingList {
 	private AlwaysList al; 
 	private String[] meals;
 	CookBook cb;
-
+	//Constructors
 	public ShoppingList(AlwaysList alw, String[] m, CookBook ncb){
 		this.al = alw;
 		this.meals = m;

@@ -37,7 +37,7 @@ public class Main {
 		mainMenu(); 
 
 	}
-	
+	//Basic read read - checks if already used or not
 	public static void readIn(){
 		int na = newApp();
 		if(na==0){
@@ -72,6 +72,7 @@ public class Main {
 		}
 	}
 
+	//Initializes all parts 
 	public static void initApp(){
 		mp = new MealPlan();
 		al = new AlwaysList();
@@ -80,7 +81,7 @@ public class Main {
 		pp = new PeoplePlaces();
 	}
 	
-	
+	//Create file if program has never been used
 	public static int newApp(){
 		//creating File instance to reference text file in Java
         File text = new File("app.eat");
@@ -107,7 +108,7 @@ public class Main {
 	
 	
 	/*
-	 * Dette er hovedmenuen hvor alt bliver valgt
+	 * Main menu with options
 	 */
 	public static void mainMenu(){
 		Scanner sc = new Scanner(System.in);
@@ -129,7 +130,7 @@ public class Main {
 	}
 	
 	/* 
-	 * Menu for alle retter der er i databasen
+	 * Menu for recipes in the database
 	 */
 	public static void menuCookbook(CookBook cb){
 		Scanner sc = new Scanner(System.in);
@@ -149,7 +150,7 @@ public class Main {
 	}
 	
 	/*
-	 * Madplan for ugen
+	 * Mealplan for the week
 	 */
 	public static void menuMealPlan(MealPlan mp){
 		Scanner sc = new Scanner(System.in);
@@ -159,7 +160,7 @@ public class Main {
 		System.out.println("3 Ryd hele madplanen");
 	}
 	/*
-	 * Indkøbsliste 
+	 * Shopping list
 	 */
 	public static void menuShoppingList(ShoppingList sl){
 		Scanner sc = new Scanner(System.in);
@@ -169,14 +170,14 @@ public class Main {
 	
 	
 	/*
-	 * Listen over venner og restauranter
+	 *List of friends and restaurant
 	 */
 	public static void menuOutside(){
 		
 	}
 	
 	
-	
+	//Not finished - will be used to change list of ingredients for a dish
 	public static void changeIngreInDish(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Find ret");
@@ -204,6 +205,7 @@ public class Main {
 		cb.removeDish(name);
 	}
 	
+	//This adds a meal to the meal plan, varies if recipe is new or old
 	public void addMealToMealplan(String name, String ingre, Boolean old,int day ){
 			if(old==true){
 				mp.setMealinMealPlan(day, name);
@@ -216,6 +218,7 @@ public class Main {
 			}
 	}
 	
+	//Adds a friend/restauranr to meal plan
 	public void addFoRToMealplan(String name, Outside o, Boolean old,int day ){
 		if(old==true){
 			mp.setMeetInOutList(day, o);
@@ -228,6 +231,7 @@ public class Main {
 		}
 	}
 	
+	
 	public void removeDishFromMealPlan(int day){
 		mp.clearDay(day, true);
 		sl.getMeals()[day-1] = null;
@@ -239,7 +243,7 @@ public class Main {
 	}
 
 	/*
-	 * 
+	 * Lets you choose a dish or friend/restaurant from a list
 	 */
 	public int getNumberFromList(ArrayList<String> list, Boolean meal){
 		for(int i =0;i<list.size();i++){

@@ -2,10 +2,12 @@ package Structures;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
+/*
+ * This list is for things you always buy when shopping - like milk, juice and cereal.
+ */
 public class AlwaysList {
 ArrayList<String> list;
-
+	//Constructors
 	public AlwaysList(ArrayList<String> l){
 		this.list = l;
 	}

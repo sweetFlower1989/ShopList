@@ -9,6 +9,7 @@ public class PeoplePlaces {
 	private ArrayList<String> names;
 	
 	//All information about people and places
+	//Constructor
 	public PeoplePlaces(){
 		friendList = new HashMap<String,Info>();
 		names = new ArrayList<String>();
@@ -19,7 +20,7 @@ public class PeoplePlaces {
 		this.names = n;
 	}
 	
-
+	//Get and set 
 	public void setFriendlist(HashMap<String,Info> nfl){
 		friendList = nfl;
 	}
